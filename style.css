@@ -95,7 +95,7 @@ select {
 
 .container {
   margin-inline: auto;
-  max-width: 370px;
+  max-width: 1300px;
   width: calc(100vw - 2em);
 }
 
@@ -127,9 +127,19 @@ main {
   margin-block: 3em;
 }
 
+@media (min-width: 1000px) {
+  .hero {
+    display: grid;
+    gap: 5em;
+    grid-template-columns: 30% 1fr;
+    place-items: center;
+  }
+}
+
 .hero > img {
   border: 5px solid var(--color-accent);
   border-radius: 50%;
+  margin-inline: auto;
 }
 
 h1,
@@ -144,6 +154,7 @@ h2 {
 
 .projects__grid {
   display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 2em;
   margin-top: 1em;
 }
