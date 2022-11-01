@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Rubik:wght@700&display=swap");
+
+:root {
+  --color-neutral-100: #f8f8f8;
+  --color-neutral-200: #bbbbbb;
+  --color-neutral-800: #16162bce;
+  --color-neutral-900: #16162b;
+  --color-accent: #159871;
+
+  --font-family-body: "Rubik", sans-serif;
+  --font-family-title: "Inter", sans-serif;
+  --color: var(--color-neutral-800);
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+}
+
+/* Reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Utility Classes */
+
+.container {
+  margin-inline: auto;
+  max-width: 370px;
+  width: calc(100vw - 2em);
+}
+
+.highlight {
+  color: var(--color-accent);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.even-columns {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Components */
+
+body {
+  background-color: var(--color-neutral-100);
+  color: var(--color);
+  font-family: var(--font-family-body);
+  font-size: 1rem;
+  font-weight: var(--font-weight-regular);
+  line-height: 1.7;
+}
+
+main {
+  display: grid;
+  gap: 2em;
+  margin-block: 3em;
+}
+
+.hero > img {
+  border: 5px solid var(--color-accent);
+  border-radius: 50%;
+}
+
+h1,
+h2 {
+  color: var(--color-accent);
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+.projects__grid {
+  display: grid;
+  gap: 2em;
+  margin-top: 1em;
+}
+
+.projects__project {
+  --radius: 1em;
+  background-color: #fff;
+  display: grid;
+  border-radius: var(--radius);
+  gap: 1em;
+}
+
+.projects__project > img {
+  max-height: 300px;
+  object-fit: fill;
+  width: 100%;
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+}
+
+.projects__project > div {
+  display: grid;
+  gap: 1em;
+  padding: 1em;
+}
+
+.projects__project a {
+  background-color: var(--color-accent);
+  border-radius: 10em;
+  color: var(--color-neutral-100);
+  padding: 0.5em 2em;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+.projects__project a:hover,
+.projects__project a:focus-visible {
+  text-decoration: underline;
+  text-decoration-style: wavy;
+}
